@@ -2,8 +2,8 @@ import logging
 
 # Configure the logger
 logging.basicConfig(
-    level=logging.DEBUG,     # Set the logging level to DEBUG
-    format='%(asctime)s [%(levelname)s]: %(message)s'  # Define log message format
+    level=logging.INFO,     # Set the logging level to DEBUG
+    format='%(asctime)s [%(name)s] [%(levelname)s]: %(message)s'  # Include logger name
 )
 
 
