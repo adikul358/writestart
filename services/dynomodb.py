@@ -2,7 +2,7 @@ import boto3
 from models.user_info import UserInfo
 from logger import get_logger
 
-dynamodb = boto3.resource('dynamodb')
+dynamodb = boto3.resource('dynamodb', region_name='us-east-1')
 
 
 class User:

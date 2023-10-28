@@ -3,7 +3,7 @@ from dotenv import load_dotenv
 from models.user_info import UserInfo
 
 from services.dynomodb import User
-from chat import chat
+from models.chat import chat
 import openai
 
 from logger import get_logger
