@@ -44,6 +44,7 @@ def home():
         #gpt_resp = chat(user_input, message_history)
         #splitted_gpt_resp = gpt_resp.split('\n')
         #   print(splitted_gpt_resp)
+        print("hi")
         resp = jsonify({'tweets': get_tweets(company_name, product_name, ideal_user), 'posts': get_posts(company_name, product_name, ideal_user), 'blogs': get_blogs(company_name, product_name, ideal_user)})
         print(resp)
         #for i in splitted_gpt_resp:
