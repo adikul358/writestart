@@ -140,12 +140,17 @@
         margin-right: auto;
         
       }
+      .pay-text {
+        padding-top: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center; 
+      }
       .pay-now-button {
         display: flex;
         justify-content: center;
         align-items: center; 
-    }
-
+      }
       .submit-letsgo{
         display: flex;
         justify-content: center;
@@ -232,9 +237,11 @@
         <div class="pay-now">
           <hr class="divider">
 
-          <p>Click Pay Now to access all the content.</p>
-
+          
+          <p class = "pay-text">Click Pay Now to access all the content.</p>
           <div class = "pay-now-button">
+            
+            <br>
             <form>
                 <script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_MV6keVapOImdCY" async> </script>
             </form>
@@ -245,7 +252,7 @@
 
     </div>
     <div class="footer">
-      This is brought to you by Pra(Tyush + Nav)
+      This is brought to you by <a href="https://www.linkedin.com/in/pratyush-goel-99b830193/" target="_blank">Pratyush</a> & <a href="https://www.linkedin.com/in/pranavgupta2003/" target="_blank">Pranav</a>
     </div>
     <script>
       const form = document.querySelector('form');

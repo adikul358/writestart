@@ -11,10 +11,8 @@ import openai
 
 from logger import get_logger
 
-load_dotenv()
+print(load_dotenv())
 
-
-openai.api_key = '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'
 message_history = []
 def get_tweets(company_name, product_name, ideal_user):
     user_input = "Write the first 30 Tweets for my company" + company_name + "Our main product revolves around" + product_name + "and the ideal user is" + ideal_user + ". Rules: 1. No hashtags 2. Tweet 1-5 should be about the launch 3. Tweet 6-10 should be about the problem the product solves 4. Tweet 11-15 should be about how the product solves the problem 5. Tweet 16-20 should be about testimonials 6. Tweet 21-25 should be funny and engaging content 7. Tweet 26-30 should be about the roadmap of the company's product. Make sure you give each tweet in a new line."
@@ -44,7 +42,6 @@ def home():
         #gpt_resp = chat(user_input, message_history)
         #splitted_gpt_resp = gpt_resp.split('\n')
         #   print(splitted_gpt_resp)
-        print("hi")
         resp = jsonify({'tweets': get_tweets(company_name, product_name, ideal_user), 'posts': get_posts(company_name, product_name, ideal_user), 'blogs': get_blogs(company_name, product_name, ideal_user)})
         print(resp)
         #for i in splitted_gpt_resp:
@@ -52,14 +49,14 @@ def home():
         return resp
     return render_template('new.html')
 
-@app.route("/admin")
+#@app.route("/admin")
 def card_view():
     get_logger("card_view").info("card_view()")
     data = user_table.get_all_info()
     return render_template('user_info.html', data=data)
 
 
-@app.route("/test")
+#@app.route("/test")
 def exeriment():
     get_logger("experiment").info("experiment()")
     return "works"
