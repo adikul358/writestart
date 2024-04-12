@@ -12,7 +12,8 @@ def chat(inp, message_history, role="user"):
     )
     reply_content = completion.choices[0].message.content
     #message_history.append({"role": "assistant", "content": f"{reply_content}"})
-    return reply_content"""
+    return reply_content
+"""
 
 def chat(inp, message_history, role="user"):
     message_history=[]
