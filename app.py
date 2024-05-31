@@ -1,3 +1,4 @@
+import os
 import openai
 from flask import Flask, render_template, request, jsonify
 from dotenv import load_dotenv
@@ -56,7 +57,7 @@ def exeriment():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, host="0.0.0.0", port=int(os.environ.get('PORT', 8080)))
 
 
 #Liftoff
