@@ -41,7 +41,7 @@ def home():
         #for i in splitted_gpt_resp:
             #resp = jsonify({'output': i})
         return resp
-    return render_template('new.html')
+    return render_template('index.html')
 
 #@app.route("/admin")
 # def card_view():
