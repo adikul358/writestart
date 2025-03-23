@@ -19,11 +19,10 @@ def chat(inp, message_history, role="user"):
 """
 
 def chat(inp, message_history=[], role="user"):
-    message_history.append({"role": role, "content": f"{inp}"})
+    # message_history.append({"role": role, "content": f"{inp}"})
     completion = client.chat.completions.create(
         model="gpt-4o-mini",
-        messages=message_history
+        messages=[{"role": role, "content": f"{inp}"}]
     )
-    print(message_history)
     reply_content = completion.choices[0].message.content
     return reply_content

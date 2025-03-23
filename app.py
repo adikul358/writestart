@@ -19,33 +19,19 @@ def get_blogs(company_name, product_name, ideal_user):
 
 app = Flask(__name__)
 
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/', methods=['GET'])
 def home():
-    if request.method == 'POST':
-        company_name = request.form['question1']
-        product_name = request.form['question2']
-        ideal_user = request.form['question3']
+    # if request.method == 'POST':
+    #     company_name = request.form['question1']
+    #     product_name = request.form['question2']
+    #     ideal_user = request.form['question3']
 
-        # user_table.put_info(UserInfo.attach_random_id(company_name=company_name, ideal_user=ideal_user, product_name=product_name))
-        #user_input = "My product is called " + product_name +". Write a PRD of a feature " + feature_name +"for my product. An overview for the feature is: " + overview
-        # get_logger("experiment").info(message_history)
-        #gpt_resp = chat(user_input, message_history)
-        #splitted_gpt_resp = gpt_resp.split('\n')
-        #   print(splitted_gpt_resp)
-
-        tweets = get_tweets(company_name, product_name, ideal_user)
-        print("tweets", tweets)
-        posts = get_posts(company_name, product_name, ideal_user)
-        print("posts", posts)
-        blogs = get_blogs(company_name, product_name, ideal_user)
-        print("blogs", blogs)
-        resp = jsonify({'tweets': tweets, 'posts': posts, 'blogs': blogs})
-        print(resp)
-
-        #for i in splitted_gpt_resp:
-            #resp = jsonify({'output': i})
-
-        return resp
+    #     user_table.put_info(UserInfo.attach_random_id(company_name=company_name, ideal_user=ideal_user, product_name=product_name))
+    #     user_input = "My product is called " + product_name +". Write a PRD of a feature " + feature_name +"for my product. An overview for the feature is: " + overview
+    #     get_logger("experiment").info(message_history)
+    #     gpt_resp = chat(user_input, message_history)
+    #     splitted_gpt_resp = gpt_resp.split('\n')
+    #     print(splitted_gpt_resp)
     return render_template('index.html')
 
 #@app.route("/admin")
@@ -59,6 +45,31 @@ def home():
 # def exeriment():
 #     get_logger("experiment").info("experiment()")
 #     return "works"
+
+
+@app.route('/tweets', methods=['POST'])
+def getTweets():
+    company_name = request.form['question1']
+    product_name = request.form['question2']
+    ideal_user = request.form['question3']
+    tweets = get_tweets(company_name, product_name, ideal_user)
+    return tweets
+
+@app.route('/posts', methods=['POST'])
+def getPosts():
+    company_name = request.form['question1']
+    product_name = request.form['question2']
+    ideal_user = request.form['question3']
+    posts = get_posts(company_name, product_name, ideal_user)
+    return posts
+
+@app.route('/blogs', methods=['POST'])
+def getBlogs():
+    company_name = request.form['question1']
+    product_name = request.form['question2']
+    ideal_user = request.form['question3']
+    blogs = get_blogs(company_name, product_name, ideal_user)
+    return blogs
 
 
 if __name__ == '__main__':
