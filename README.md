@@ -4,7 +4,7 @@
 [![License](https://img.shields.io/badge/License-MIT-blue)](#license)
 [![stars - writemyprd](https://img.shields.io/github/stars/adikul358/writestart?style=flat&logo=github)](https://github.com/adikul358/writestart)
 [![forks - writemyprd](https://img.shields.io/github/forks/adikul358/writestart?style=flat&logo=github)](https://github.com/adikul358/writestart)
-<!-- [![status - writemyprd](https://img.shields.io/uptimerobot/status/m798809959-1b3aa39349c32c07420ff24e)](https://stats.uptimerobot.com/C89E11R5e2) -->
+[![status - writemyprd](https://img.shields.io/uptimerobot/status/m798810596-5901d0d0aea72743b0b2edf4)](https://stats.uptimerobot.com/C89E11R5e2)
 
 
 
