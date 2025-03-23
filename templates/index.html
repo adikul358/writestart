@@ -131,12 +131,20 @@
               method: 'POST',
               body: formData
           })
-          const data = await response.json()
+          
           loader.style.display = 'none'
           comp.style.display = 'block'
+
+          // Get response data from backend
+          const data = await response.json()
+          console.dir({data})
+          
+          // Parse markdown string to HTML and set it inside the respective sections
           output1.innerHTML = marked.parse(data.tweets)
           output2.innerHTML = marked.parse(data.posts)
           output3.innerHTML = marked.parse(data.blogs)
+
+          // Add tailwind styling classes to list elements
           const lis = document.querySelectorAll('ol')
           for (const li of lis) {
             li.className = "list-decimal list-outside ml-8 space-y-3"
